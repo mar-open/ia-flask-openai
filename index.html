@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minha IA</title>
 </head>
 <body>
@@ -22,7 +23,12 @@
             });
 
             const data = await response.json();
-            respostaElem.innerText = data.response || data.error;
+
+            if (data.response) {
+                respostaElem.innerText = data.response;
+            } else {
+                respostaElem.innerText = "Erro: " + (data.error || "Desconhecido");
+            }
         }
     </script>
 </body>
