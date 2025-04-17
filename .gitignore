@@ -1,0 +1,10 @@
+# Ignorar o arquivo .env que contém a chave da API
+.env
+
+# Ignorar arquivos de bytecode Python
+*.pyc
+__pycache__
+
+# Ignorar diretórios e arquivos temporários de IDEs (exemplo: VSCode, PyCharm)
+.vscode/
+.idea/
