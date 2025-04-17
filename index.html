@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Minha IA</title>
+</head>
+<body>
+    <h1>Converse com a IA</h1>
+    <textarea id="input" placeholder="Escreva algo..."></textarea><br>
+    <button onclick="enviarMensagem()">Enviar</button>
+    <p><strong>Resposta:</strong> <span id="resposta"></span></p>
+
+    <script>
+        async function enviarMensagem() {
+            const input = document.getElementById("input").value;
+            const respostaElem = document.getElementById("resposta");
+
+            const response = await fetch("/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: input })
+            });
+
+            const data = await response.json();
+            respostaElem.innerText = data.response || data.error;
+        }
+    </script>
+</body>
+</html>
