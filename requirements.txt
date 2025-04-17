@@ -1,4 +1,11 @@
+HEAD
 flask
 openai
 flask-cors
 gunicorn
+
+flask
+openai
+flask-cors
+gunicorn
+ac2e84f6a50c06b829b59961ca691521c312927e
